@@ -33,7 +33,4 @@ function addTask() {
         taskList.appendChild(li);
         taskInput.value = '';
     }
-    else{
-        alert("enter the task ")
-    }
 }

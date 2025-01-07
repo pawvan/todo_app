@@ -34,6 +34,6 @@ function addTask() {
         taskInput.value = '';
     }
     else{
-        alert("enter the task ")
+        
     }
 }

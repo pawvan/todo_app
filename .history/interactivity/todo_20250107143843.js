@@ -13,11 +13,11 @@ function addTask() {
             if (li.classList.contains('completed')) {
                 li.classList.remove('completed');
                 completeButton.textContent = 'Complete';
-                li.style.textDecoration="none"
+                li.style.textDecoration="line-through"
             } else {
                 li.classList.add('completed');
                 completeButton.textContent = 'Uncomplete';
-                li.style.textDecoration="line-through"
+                li.style.textDecoration="none"
             }
         };
 
@@ -32,8 +32,5 @@ function addTask() {
         li.appendChild(deleteButton);
         taskList.appendChild(li);
         taskInput.value = '';
-    }
-    else{
-        alert("enter the task ")
     }
 }
