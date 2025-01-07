@@ -8,8 +8,8 @@ function addTask() {
         const  li = document.createElement('li');
         li.textContent = taskText;
 
-        
-        const  deleteButton = document.createElement('button');
+        // Append a delete button to each task
+        let deleteButton = document.createElement('button');
         deleteButton.textContent = 'x';
         deleteButton.classList.add('delete-btn');
         deleteButton.onclick = function() {
