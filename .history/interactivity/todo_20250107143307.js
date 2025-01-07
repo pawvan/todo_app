@@ -14,11 +14,9 @@ function addTask() {
             if (li.classList.contains('completed')) {
                 li.classList.remove('completed');
                 completeButton.textContent = 'Complete';
-                li.style.textDecoration="line-through"
             } else {
                 li.classList.add('completed');
                 completeButton.textContent = 'Uncomplete';
-                li.style.textDecoration="none"
             }
         };
 

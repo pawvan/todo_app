@@ -18,7 +18,7 @@ function addTask() {
             } else {
                 li.classList.add('completed');
                 completeButton.textContent = 'Uncomplete';
-                li.style.textDecoration="none"
+                li.style.textDecoration="line-through"
             }
         };
 
