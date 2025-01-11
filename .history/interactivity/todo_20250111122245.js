@@ -78,7 +78,6 @@ function loadTasks() {
       taskList.appendChild(li);
     });
   }
-  
   function getTasksFromLocalStorage() {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : [];

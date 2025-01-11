@@ -1,0 +1,40 @@
+function addTask() {
+    const todoContainer =document.getElementsByClassName('todo-container')
+    const taskInput = document.getElementById('todo-input');
+    const taskText = taskInput.value.trim();
+    const createAlert  = document.createElement('div')
+    const taskList = document.getElementById('task-list');
+    if (taskText !== '') {
+        const li = document.createElement('li');
+        li.textContent = taskText;
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.classList.add('complete-btn');
+        completeButton.onclick = function() {
+            if (li.classList.contains('completed')) {
+                li.classList.remove('completed');
+                completeButton.textContent = 'Complete';
+                li.style.textDecoration="none"
+            } else {
+                li.classList.add('completed');
+                completeButton.textContent = 'Uncomplete';
+                li.style.textDecoration="line-through"
+            }
+        };
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'x';
+        deleteButton.classList.add('delete-btn');
+        deleteButton.onclick = function() {
+            li.remove();
+        };
+        li.appendChild(completeButton);
+        li.appendChild(deleteButton);
+        taskList.appendChild(li);
+        taskInput.value = '';
+    }
+    else{
+        li.appendChild()
+        createAlert.textContent ="Please enter the task"
+        taskList.appendChild(createAlert)
+    }
+}

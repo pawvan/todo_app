@@ -64,7 +64,6 @@ function createButton(Label, classNames, onclickMethod) {
   };
   return button;
 }
-
 function loadTasks() {
     const tasks = getTasksFromLocalStorage();
     const taskList = document.getElementById("task-list");
@@ -78,7 +77,6 @@ function loadTasks() {
       taskList.appendChild(li);
     });
   }
-  
   function getTasksFromLocalStorage() {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : [];

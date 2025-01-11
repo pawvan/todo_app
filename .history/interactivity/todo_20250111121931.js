@@ -27,7 +27,7 @@ function alertThing() {
 }
 function createDeleteButton(listElement) {
   const removeLi = () => {
-    removeTaskFromLocalStorage(listElement.textContent)
+    remove
     listElement.remove();
   };
   const deleteButton = createButton("x", "delete-btn", removeLi);
@@ -54,7 +54,6 @@ function createCompleteButton(listElement) {
 
   return completeButton;
 }
-
 function createButton(Label, classNames, onclickMethod) {
   const button = document.createElement("button");
   button.textContent = Label;
@@ -64,7 +63,6 @@ function createButton(Label, classNames, onclickMethod) {
   };
   return button;
 }
-
 function loadTasks() {
     const tasks = getTasksFromLocalStorage();
     const taskList = document.getElementById("task-list");
@@ -78,13 +76,7 @@ function loadTasks() {
       taskList.appendChild(li);
     });
   }
-  
   function getTasksFromLocalStorage() {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : [];
-  }
-  function removeTaskFromLocalStorage(taskText){
-    const tasks=getTasksFromLocalStorage()
-    const updatedTasks = tasks.filter((task) => task !== taskText.trim());
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   }
