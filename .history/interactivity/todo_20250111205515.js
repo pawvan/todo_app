@@ -12,14 +12,9 @@ function addTask() {
   taskInput.append(li);
   if (taskText !== "") {
     const newTask ={
-        id:Date.now()
-        ,
-        text:taskText,
-        createAt:new Date().toISOString(),
-        isCompleted :false
+        
     } 
-
-    li.textContent = newTask.text;
+    li.textContent = taskText;
     const completeButton = createCompleteButton(li);
     const deleteButton = createDeleteButton(li);
     li.appendChild(completeButton);
@@ -40,9 +35,9 @@ function alertThing() {
   createDiv.classList.add("alert");
 }
 
-function createDeleteButton(listElement,task) {
+function createDeleteButton(listElement) {
   const removeLi = () => {
-    removeTaskFromLocalStorage(task.id)
+    removeTaskFromLocalStorage(listElement.textContent)
     listElement.remove();
   };
 
@@ -54,10 +49,9 @@ function createDeleteButton(listElement,task) {
   return deleteButton;
 }
 
-function createCompleteButton(listElement,task) {
+function createCompleteButton(listElement) {
   const completeCallBack = () => {
-    task.isCompleted = !task.isCompleted;
-    if (!task.isCompleted) {
+    if (listElement.classList.contains("completed")) {
       listElement.classList.remove("completed");
       completeButton.textContent = "Complete";
       listElement.style.textDecoration = "none";

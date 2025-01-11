@@ -57,7 +57,8 @@ function createDeleteButton(listElement,task) {
 function createCompleteButton(listElement,task) {
   const completeCallBack = () => {
     task.isCompleted = !task.isCompleted;
-    if (!task.isCompleted) {
+
+    if (!task.) {
       listElement.classList.remove("completed");
       completeButton.textContent = "Complete";
       listElement.style.textDecoration = "none";

@@ -11,15 +11,7 @@ function addTask() {
   const li = document.createElement("li");
   taskInput.append(li);
   if (taskText !== "") {
-    const newTask ={
-        id:Date.now()
-        ,
-        text:taskText,
-        createAt:new Date().toISOString(),
-        isCompleted :false
-    } 
-
-    li.textContent = newTask.text;
+    li.textContent = taskText;
     const completeButton = createCompleteButton(li);
     const deleteButton = createDeleteButton(li);
     li.appendChild(completeButton);
@@ -40,24 +32,23 @@ function alertThing() {
   createDiv.classList.add("alert");
 }
 
-function createDeleteButton(listElement,task) {
+function createDeleteButton(listElement) {
   const removeLi = () => {
-    removeTaskFromLocalStorage(task.id)
+    removeTaskFromLocalStorage(listElement.textContent)
     listElement.remove();
   };
 
-  const deleteButton = createButton("x", ["delete-btn","complete-btn"], removeLi);
-  document.querySelectorAll('.delete-btn').forEach((button)=>{
-    let parentElement  =button.closest("div")
+  const deleteButton = createButton("x", ['delete-btn"], removeLi);
+  document.querySelector('.delete-btn').forEach((button)=>{
+    let parentElement  =button.closest('div')
     console.log(parentElement)
 })
   return deleteButton;
 }
 
-function createCompleteButton(listElement,task) {
+function createCompleteButton(listElement) {
   const completeCallBack = () => {
-    task.isCompleted = !task.isCompleted;
-    if (!task.isCompleted) {
+    if (listElement.classList.contains("completed")) {
       listElement.classList.remove("completed");
       completeButton.textContent = "Complete";
       listElement.style.textDecoration = "none";
