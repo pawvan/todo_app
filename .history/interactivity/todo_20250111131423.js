@@ -23,7 +23,6 @@ function addTask() {
 }
 
 function alertThing() {
-    const todoContainer = document.getElementsByClassName("todo-container")[0];
   const createDiv = document.createElement("div");
   createDiv.textContent = "please enter the task";
   todoContainer.appendChild(createDiv);
@@ -35,7 +34,7 @@ function createDeleteButton(listElement) {
     removeTaskFromLocalStorage(listElement.textContent)
     listElement.remove();
   };
-  const deleteButton = createButton("x", ['delete-btn'], removeLi);
+  const deleteButton = createButton("x", "delete-btn", removeLi);
   return deleteButton;
 }
 
@@ -53,8 +52,8 @@ function createCompleteButton(listElement) {
   };
   const completeButton = createButton(
     "Complete",
-    ['complete-btn']
-,    completeCallBack
+    "complete-btn",
+    completeCallBack
   );
 
   return completeButton;

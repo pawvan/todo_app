@@ -35,7 +35,7 @@ function createDeleteButton(listElement) {
     removeTaskFromLocalStorage(listElement.textContent)
     listElement.remove();
   };
-  const deleteButton = createButton("x", ['delete-btn'], removeLi);
+  const deleteButton = createButton("x", "delete-btn", removeLi);
   return deleteButton;
 }
 
@@ -53,8 +53,8 @@ function createCompleteButton(listElement) {
   };
   const completeButton = createButton(
     "Complete",
-    ['complete-btn']
-,    completeCallBack
+    
+    completeCallBack
   );
 
   return completeButton;

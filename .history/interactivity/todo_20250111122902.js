@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", loadTasks);
 
 function addTask() {
-  
+  const todoContainer = document.getElementsByClassName("todo-container")[0];
   const taskInput = document.getElementById("todo-input");
   const taskText = taskInput.value.trim();
   const alertElement = document.querySelector(".alert");
@@ -23,19 +23,17 @@ function addTask() {
 }
 
 function alertThing() {
-    const todoContainer = document.getElementsByClassName("todo-container")[0];
   const createDiv = document.createElement("div");
   createDiv.textContent = "please enter the task";
   todoContainer.appendChild(createDiv);
   createDiv.classList.add("alert");
 }
-
 function createDeleteButton(listElement) {
   const removeLi = () => {
     removeTaskFromLocalStorage(listElement.textContent)
     listElement.remove();
   };
-  const deleteButton = createButton("x", ['delete-btn'], removeLi);
+  const deleteButton = createButton("x", "delete-btn", removeLi);
   return deleteButton;
 }
 
@@ -53,8 +51,8 @@ function createCompleteButton(listElement) {
   };
   const completeButton = createButton(
     "Complete",
-    ['complete-btn']
-,    completeCallBack
+    "complete-btn",
+    completeCallBack
   );
 
   return completeButton;
@@ -89,12 +87,11 @@ function saveTaskToLocalStorage(task) {
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
-  
+
   function getTasksFromLocalStorage() {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : [];
   }
-
   function removeTaskFromLocalStorage(taskText){
     const tasks=getTasksFromLocalStorage()
     const updatedTasks = tasks.filter((task) => task !== taskText.trim());
