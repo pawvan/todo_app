@@ -14,6 +14,7 @@ function addTask() {
         createAt:new Date().toISOString(),
         isCompleted :false
     } 
+
     li.textContent = newTask.text;
     const completeButton = createCompleteButton(li);
     const deleteButton = createDeleteButton(li);
@@ -106,8 +107,8 @@ function saveTaskToLocalStorage(task) {
     return tasks ? JSON.parse(tasks) : [];
   }
 
-  function removeTaskFromLocalStorage(taskId){
+  function removeTaskFromLocalStorage(taskText){
     const tasks=getTasksFromLocalStorage()
-    const updatedTasks = tasks.filter((task) => task.id !== taskID());
+    const updatedTasks = tasks.filter((task) => task !== taskText.trim());
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   }

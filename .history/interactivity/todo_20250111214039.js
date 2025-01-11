@@ -108,6 +108,6 @@ function saveTaskToLocalStorage(task) {
 
   function removeTaskFromLocalStorage(taskId){
     const tasks=getTasksFromLocalStorage()
-    const updatedTasks = tasks.filter((task) => task.id !== taskID());
+    const updatedTasks = tasks.filter((task) => task !== taskText.trim());
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   }
