@@ -14,10 +14,8 @@ function addTask() {
     li.appendChild(completeButton);
     li.appendChild(deleteButton);
     taskList.appendChild(li);
-
     taskInput.value = "";
-    saveTaskToLocalStorage(taskText); 
-} else {
+  } else {
     alertElement ? "" : alertThing();
   }
 }

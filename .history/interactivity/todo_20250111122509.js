@@ -14,10 +14,8 @@ function addTask() {
     li.appendChild(completeButton);
     li.appendChild(deleteButton);
     taskList.appendChild(li);
-
     taskInput.value = "";
-    saveTaskToLocalStorage(taskText); 
-} else {
+  } else {
     alertElement ? "" : alertThing();
   }
 }
@@ -80,12 +78,7 @@ function loadTasks() {
       taskList.appendChild(li);
     });
   }
-
-function saveTaskToLocalStorage(task) {
-    const tasks = getTasksFromLocalStorage();
-    tasks.push(task);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }
+  
   function getTasksFromLocalStorage() {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : [];
