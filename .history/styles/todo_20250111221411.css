@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    gap: 20px;
+}
+
+.todo-header {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; /* Adds space between elements */
+}
+
+#todo-input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+#add-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color:;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#add-button:hover {
+    background-color: #45a049;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}

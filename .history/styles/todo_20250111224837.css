@@ -1,0 +1,46 @@
+body {
+    margin-top: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color:aliceblue
+}
+
+.todo-upper {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 20px;
+  
+}
+
+.todo-container{
+    background-color:white
+}
+
+.todo-header
+{
+    
+    
+    font-size: 26px;
+    font-weight: 400;
+}
+
+#todo-input {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#add-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color:#000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}

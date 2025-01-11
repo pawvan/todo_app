@@ -1,0 +1,14 @@
+body {
+    margin-top: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #f2f3f4;
+}
+
+.todo-upper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
